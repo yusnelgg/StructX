@@ -1,0 +1,64 @@
+﻿<Window x:Class="StructX.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StructX" Height="450" Width="800">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Estado vacío -->
+        <TextBlock
+        x:Name="TxtEmpty"
+        Text="Aún no has cargado nada todavía"
+        FontSize="16"
+        Foreground="Gray"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"/>
+
+        <!-- Estado archivo cargado -->
+        <!-- Estado archivo cargado -->
+        <StackPanel
+    x:Name="FilePreview"
+    Visibility="Collapsed"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center">
+
+            <!-- Icono -->
+            <TextBlock
+        Text="📊"
+        FontSize="48"
+        HorizontalAlignment="Center"/>
+
+            <!-- Nombre del archivo -->
+            <TextBlock
+        x:Name="TxtFileName"
+        FontSize="16"
+        FontWeight="SemiBold"
+        Margin="0,10,0,0"
+        TextAlignment="Center"/>
+
+            <!-- Botón generar SQL -->
+            <Button
+                x:Name="BtnGenerarSql"
+                Content="Generar SCRIPT SQL"
+                Width="200"
+                Height="36"
+                Margin="0,15,0,0"
+                Visibility="Collapsed"
+                Click="BtnGenerarSql_Click"/>
+        </StackPanel>
+
+        <!-- Botón -->
+        <Button
+        Grid.Row="1"
+        Content="Subir Excel"
+        Height="36"
+        Width="120"
+        HorizontalAlignment="Right"
+        Margin="0,10,0,0"
+        Click="BtnCargarExcel_Click"/>
+    </Grid>
+</Window>
